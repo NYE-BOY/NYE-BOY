@@ -1,0 +1,334 @@
+
+/*Start Variables*/
+:root{
+    --main-color: #ac9b3b;
+    --trans-color: rgb(255 215 0 / 70%);
+    --section-padding:100px;
+
+    
+}
+/*End Variables*/
+/*Start Global rules*/
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+    
+}
+ul{
+    list-style: none;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Small screen*/
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+/*Medium screen*/
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+/*Large screen*/
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/*End Global rules*/
+/*Start componants*/
+.main-heading{
+    text-align: center;
+}
+.main-heading h2{
+    padding-top:100px ;
+    font-weight: normal;
+    font-size: 40px;
+    position: relative;
+    margin-bottom: 70px;
+    text-transform: uppercase;
+    color: #ac9b3b;
+}
+.main-heading h2::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    background-color: #a2a2a2;
+    bottom: -30px;
+    width: 120px;
+    
+}
+.main-heading h2::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid #a2a2a2 ;
+    bottom: -38px;
+    background-color: white;
+}
+.main-heading p{
+    width: 550px;
+    margin: 0 auto 100px;
+    max-width: 100%;
+    line-height: 2;
+    color: #a2a2a2;
+}
+/*End componants*/
+/*Start Header*/
+header{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 97px;
+}
+header .container::after{
+    content:"" ;
+    position: absolute;
+    height: 1px;
+    bottom: 0px;
+    background-color: #a2a2a2;
+    width: calc(100% - 30px);
+    left: 15px;
+}
+header .logo img{
+    height: 75px;
+}
+header nav{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content:flex-end ;
+}
+header nav .toggle-menu{
+    color: white;
+    font-size: 22px;
+}
+@media (min-width: 768px){
+    header nav .toggle-menu{
+        display: none;
+    }
+}
+header nav ul{
+    display: flex;
+}
+@media (max-width: 767px){
+    header nav ul{
+        display: none;
+    }
+    header nav .toggle-menu:hover + ul{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgb(0 0 0 /50%);
+    }
+    header nav .toggle-menu:hover + ul li a{
+        padding: 15px;
+    }
+}
+header nav ul li a{
+    padding: 40px 10px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0,3s;
+    position: relative;
+    z-index: 3;
+}
+header nav ul li a.active , header nav ul li a:hover{
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+/*End Header*/
+/*Start Landing*/
+.landing{
+    min-height: 100vh;
+    background-image: url('../image/photo.jpg');
+    background-size: cover;
+    position: relative;
+}
+.landing .overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 /60%);
+}
+.landing .text{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    padding: 50px;
+    background-color: var(--trans-color);
+    color: white;
+    display: flex;
+    justify-content: end;
+}
+@media (max-width: 767px){
+    .landing .text{
+        width: 100%;
+    }
+    .landing .text .contact{
+        max-width: 100%;
+    }
+}
+.landing .text .contact{
+    max-width: 500%;
+}
+
+.landing .text .contact h2{
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+.landing .text .contact p{
+    line-height: 2;
+    color: black;
+    font-size: 14px;
+    line-height: 2;
+}
+
+/*End Landing*/
+/*Start Who*/
+.who{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.who .container .info{
+    padding: 20px
+}
+.who .container .info p{
+    text-align: center;
+    line-height: 2;
+}
+.who .container .info p a{
+    text-decoration: none;
+    color: var(--main-color);
+}
+/*End Who*/
+/*Start Achievements*/
+.Achievements{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+@media (min-width: 768px){
+    .Achievements .Achiv-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+        grid-column-gap: 40px;
+        grid-row-gap: 60px;
+    }
+}
+.Achievements .ach-box{
+    display: flex;
+
+}
+@media (max-width:767px){
+    .Achievements .ach-box{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .Achievements .ach-box i{
+        margin: 0 0 20px;
+    }
+
+}
+.Achievements .ach-box i{
+    margin-right: 50px;
+    font-size: 20px;
+
+}
+.Achievements .ach-box h3{
+    margin-bottom: 30px;
+    color: var(--main-color);
+}
+.Achievements .ach-box p{
+    line-height: 2;
+    color: black;
+}
+.Achievements .ach-box p a{
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+
+/*End Achievements*/
+/*Start Contact*/
+.contact{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    
+}
+.contact .info {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    text-align: center;
+}
+.contact .info .lable{
+    font-size: 35px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+.contact .info .link{
+    display: block;
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--main-color);
+    text-decoration: none;
+}
+.contact .info .social{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+.contact .info .social i{
+    margin-left: 10px;
+    color: var(--secondary-color);
+}
+
+@media(max-width:767px){
+    .contact .info .lable , .contact .info .link{font-size: 25px;}
+    
+}
+/*End Contact*/
